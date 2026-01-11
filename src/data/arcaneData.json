@@ -1,0 +1,200 @@
+[
+    {
+        "number": 22,
+        "name": "Le Mat",
+        "coreMeaning": "Liberté et errance",
+        "lifeCycleManifestation": "Parcours atypique, instable, marqué par des changements fréquents et une difficulté à suivre un chemin conventionnel.",
+        "potential": "Grande liberté intérieure, capacité à recommencer.",
+        "risk": "Fuite des responsabilités, dispersion.",
+        "evolutionaryChallenge": "Assumer sa liberté tout en s'engageant."
+      },
+      {
+        "number": 1,
+        "name": "Le Bateleur",
+        "coreMeaning": "Potentiel et initiation",
+        "lifeCycleManifestation": "Nombreux débuts, apprentissages par l'action, curiosité et initiatives multiples.",
+        "potential": "Créativité, adaptabilité.",
+        "risk": "Manque de constance, superficialité.",
+        "evolutionaryChallenge": "Transformer le potentiel en maîtrise réelle."
+      },
+      {
+        "number": 2,
+        "name": "La Papesse",
+        "coreMeaning": "Intériorité et gestation",
+        "lifeCycleManifestation": "Cycle de retrait, d'observation et d'accumulation lente de connaissances.",
+        "potential": "Sagesse intérieure, profondeur.",
+        "risk": "Immobilisme, enfermement intérieur.",
+        "evolutionaryChallenge": "Passer de l'attente à l'expression."
+      },
+      {
+        "number": 3,
+        "name": "L’Impératrice",
+        "coreMeaning": "Création et expression",
+        "lifeCycleManifestation": "Expansion sociale ou créative, communication intense, besoin de reconnaissance.",
+        "potential": "Intelligence relationnelle, créativité fertile.",
+        "risk": "Dispersion, dépendance au regard extérieur.",
+        "evolutionaryChallenge": "Canaliser l'expression vers une réalisation concrète."
+      },
+      {
+        "number": 4,
+        "name": "L’Empereur",
+        "coreMeaning": "Structure et autorité",
+        "lifeCycleManifestation": "Construction matérielle solide, responsabilités importantes, recherche de sécurité.",
+        "potential": "Stabilité, leadership.",
+        "risk": "Rigidité, besoin excessif de contrôle.",
+        "evolutionaryChallenge": "Exercer l'autorité avec souplesse."
+      },
+      {
+        "number": 5,
+        "name": "Le Pape",
+        "coreMeaning": "Sens et transmission",
+        "lifeCycleManifestation": "Recherche de cohérence morale, rôle de guide ou de référent.",
+        "potential": "Sagesse, capacité de transmission.",
+        "risk": "Dogmatisme, dépendance aux règles.",
+        "evolutionaryChallenge": "Transmettre sans imposer."
+      },
+      {
+        "number": 6,
+        "name": "L’Amoureux",
+        "coreMeaning": "Choix engageant",
+        "lifeCycleManifestation": "Décisions majeures affectives ou existentielles, tensions intérieures.",
+        "potential": "Capacité d'engagement sincère.",
+        "risk": "Indécision, dépendance affective.",
+        "evolutionaryChallenge": "Choisir en conscience."
+      },
+      {
+        "number": 7,
+        "name": "Le Chariot",
+        "coreMeaning": "Volonté et conquête",
+        "lifeCycleManifestation": "Avancée rapide, ambition forte, déplacements ou changements dynamiques.",
+        "potential": "Succès, affirmation de soi.",
+        "risk": "Précipitation, domination.",
+        "evolutionaryChallenge": "Maîtriser l'élan sans excès."
+      },
+      {
+        "number": 8,
+        "name": "La Justice",
+        "coreMeaning": "Équilibre et responsabilité",
+        "lifeCycleManifestation": "Bilans de vie, décisions importantes, retour des conséquences.",
+        "potential": "Clarté, justesse.",
+        "risk": "Rigidité, jugement excessif.",
+        "evolutionaryChallenge": "Assumer ses actes avec discernement."
+      },
+      {
+        "number": 9,
+        "name": "L’Hermite",
+        "coreMeaning": "Quête de sens",
+        "lifeCycleManifestation": "Ralentissement, solitude relative, réflexion profonde.",
+        "potential": "Maturité, sagesse.",
+        "risk": "Isolement, repli.",
+        "evolutionaryChallenge": "Partager la lumière acquise."
+      },
+      {
+        "number": 10,
+        "name": "La Roue de Fortune",
+        "coreMeaning": "Changement cyclique",
+        "lifeCycleManifestation": "Renversements imprévus, instabilité, opportunités soudaines.",
+        "potential": "Renouveau, adaptation.",
+        "risk": "Subir les événements.",
+        "evolutionaryChallenge": "Accepter le mouvement du changement."
+      },
+      {
+        "number": 11,
+        "name": "La Force",
+        "coreMeaning": "Maîtrise intérieure",
+        "lifeCycleManifestation": "Gestion d'émotions puissantes, courage et endurance.",
+        "potential": "Force morale, résilience.",
+        "risk": "Répression émotionnelle.",
+        "evolutionaryChallenge": "Transformer l'énergie brute en force consciente."
+      },
+      {
+        "number": 12,
+        "name": "Le Pendu",
+        "coreMeaning": "Renversement de perspective",
+        "lifeCycleManifestation": "Blocage apparent, sacrifice nécessaire, temps suspendu.",
+        "potential": "Compréhension profonde.",
+        "risk": "Victimisation, inertie.",
+        "evolutionaryChallenge": "Changer de regard plutôt que résister."
+      },
+      {
+        "number": 13,
+        "name": "Arcane sans nom",
+        "coreMeaning": "Transformation radicale",
+        "lifeCycleManifestation": "Fin irréversible d'un chapitre, dépouillement.",
+        "potential": "Renaissance profonde.",
+        "risk": "Résistance au changement.",
+        "evolutionaryChallenge": "Lâcher l'ancien pour renaître."
+      },
+      {
+        "number": 14,
+        "name": "Tempérance",
+        "coreMeaning": "Harmonisation",
+        "lifeCycleManifestation": "Guérison, apaisement, rééquilibrage progressif.",
+        "potential": "Stabilité intérieure.",
+        "risk": "Lenteur excessive.",
+        "evolutionaryChallenge": "Maintenir l'équilibre dans le temps."
+      },
+      {
+        "number": 15,
+        "name": "Le Diable",
+        "coreMeaning": "Énergie instinctive",
+        "lifeCycleManifestation": "Désirs puissants, attachements, confrontation à l'ombre.",
+        "potential": "Puissance vitale.",
+        "risk": "Dépendances, enfermement.",
+        "evolutionaryChallenge": "Utiliser l'énergie sans s'y soumettre."
+      },
+      {
+        "number": 16,
+        "name": "La Maison Dieu",
+        "coreMeaning": "Effondrement libérateur",
+        "lifeCycleManifestation": "Crise brutale, chute des structures obsolètes.",
+        "potential": "Libération, vérité.",
+        "risk": "Choc mal intégré.",
+        "evolutionaryChallenge": "Reconstruire sur des bases justes."
+      },
+      {
+        "number": 17,
+        "name": "L’Étoile",
+        "coreMeaning": "Espoir et guidance",
+        "lifeCycleManifestation": "Renaissance douce, foi retrouvée, réparation.",
+        "potential": "Confiance, inspiration.",
+        "risk": "Naïveté.",
+        "evolutionaryChallenge": "Garder la foi tout en restant lucide."
+      },
+      {
+        "number": 18,
+        "name": "La Lune",
+        "coreMeaning": "Inconscient et mémoire",
+        "lifeCycleManifestation": "Peurs, doutes, travail émotionnel profond.",
+        "potential": "Intuition, profondeur psychique.",
+        "risk": "Confusion, illusions.",
+        "evolutionaryChallenge": "Traverser l'ombre sans s'y perdre."
+      },
+      {
+        "number": 19,
+        "name": "Le Soleil",
+        "coreMeaning": "Clarté et joie",
+        "lifeCycleManifestation": "Réussite visible, relations harmonieuses, vitalité.",
+        "potential": "Épanouissement, partage.",
+        "risk": "Dépendance à la reconnaissance.",
+        "evolutionaryChallenge": "Rayonner sans s'identifier à l'image."
+      },
+      {
+        "number": 20,
+        "name": "Le Jugement",
+        "coreMeaning": "Éveil et appel",
+        "lifeCycleManifestation": "Prise de conscience décisive, réorientation profonde.",
+        "potential": "Libération, renaissance consciente.",
+        "risk": "Résistance à l'appel intérieur.",
+        "evolutionaryChallenge": "Répondre à l'appel de l'âme."
+      },
+      {
+        "number": 21,
+        "name": "Le Monde",
+        "coreMeaning": "Accomplissement",
+        "lifeCycleManifestation": "Intégration de l'expérience, sentiment d'unité et de cohérence.",
+        "potential": "Paix intérieure, réalisation globale.",
+        "risk": "Stagnation dans l'acquis.",
+        "evolutionaryChallenge": "Transmettre sans cesser d'évoluer."
+      }
+]

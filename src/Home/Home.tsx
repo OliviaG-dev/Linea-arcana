@@ -1,6 +1,34 @@
+import { useNavigate } from "react-router-dom";
+import { calculateLifeLine } from "../utils/tarotCalculations";
 import "./Home.css";
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const prenom = formData.get("prenom") as string;
+    const nom = formData.get("nom") as string;
+    const annee = parseInt(formData.get("annee") as string, 10);
+
+    if (!prenom || !nom || !annee) {
+      alert("Veuillez remplir tous les champs");
+      return;
+    }
+
+    const result = calculateLifeLine(prenom, nom, annee);
+
+    navigate("/life-line", {
+      state: {
+        prenom,
+        nom,
+        annee,
+        result,
+      },
+    });
+  };
+
   return (
     <div className="home">
       <div className="home-wrapper">
@@ -40,7 +68,7 @@ function Home() {
               </p>
             </div>
 
-            <form className="home-form">
+            <form className="home-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="prenom" className="form-label">
                   Prénom

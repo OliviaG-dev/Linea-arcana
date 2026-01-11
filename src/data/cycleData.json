@@ -1,0 +1,96 @@
+[
+    {
+        "tarologicalLifeCycles": [
+          {
+            "cycle": 1,
+            "name": "Incarnation et personnalité",
+            "ageRange": {
+              "min": 0,
+              "max": 20
+            },
+            "coreTheme": "Construction progressive de l'identité",
+            "description": "Ce cycle correspond à l'incarnation progressive de l'être. La personnalité se forme à travers l'enfance, l'adolescence et les premières expériences de vie. L'ego et l'identité sociale se structurent peu à peu.",
+            "keyIssues": [
+              "Construction de l'identité",
+              "Développement de la personnalité",
+              "Premiers repères psychologiques",
+              "Relation au monde extérieur"
+            ],
+            "dominantDynamic": "Apprentissage et imprégnation"
+          },
+          {
+            "cycle": 2,
+            "name": "Enfance et milieu familial",
+            "ageRange": {
+              "min": 0,
+              "max": 14
+            },
+            "coreTheme": "Héritage émotionnel et conditionnements",
+            "description": "Ce cycle décrit le climat familial et émotionnel dans lequel l'individu grandit. Il influence profondément la sécurité affective, les schémas relationnels et la perception du monde.",
+            "keyIssues": [
+              "Héritage transgénérationnel",
+              "Conditionnements émotionnels",
+              "Sécurité ou insécurité affective",
+              "Bases relationnelles"
+            ],
+            "dominantDynamic": "Réception et imprégnation"
+          },
+          {
+            "cycle": 3,
+            "name": "Passage initiatique vers l'âge adulte",
+            "ageRange": {
+              "min": 15,
+              "max": 35
+            },
+            "coreTheme": "Choix et affirmation de soi",
+            "description": "Ce cycle marque la séparation progressive du cadre familial et la recherche d'une voie personnelle. Il est souvent marqué par des choix importants, des expériences fondatrices et des remises en question.",
+            "keyIssues": [
+              "Affirmation de l'identité personnelle",
+              "Choix de vie structurants",
+              "Expérimentation et erreurs",
+              "Construction de l'autonomie"
+            ],
+            "dominantDynamic": "Choix et affirmation"
+          },
+          {
+            "cycle": 4,
+            "name": "Réalisations et bilans",
+            "ageRange": {
+              "min": 36,
+              "max": 55
+            },
+            "coreTheme": "Construction concrète et ajustements",
+            "description": "Ce cycle correspond à la confrontation aux conséquences des choix passés. Il met en lumière les réalisations, les responsabilités assumées et les ajustements nécessaires pour rester aligné.",
+            "keyIssues": [
+              "Accomplissements concrets",
+              "Responsabilités",
+              "Bilans de vie",
+              "Réorientations possibles"
+            ],
+            "dominantDynamic": "Accomplissement et rectification"
+          },
+          {
+            "cycle": 5,
+            "name": "Aboutissement et transmission",
+            "ageRange": {
+              "min": 56,
+              "max": null
+            },
+            "coreTheme": "Intégration et sens de la vie",
+            "description": "Ce cycle est celui de la synthèse. L'individu cherche à comprendre le sens global de son parcours, à transmettre son expérience et à se détacher de ce qui n'est plus essentiel.",
+            "keyIssues": [
+              "Intégration de l'expérience",
+              "Transmission",
+              "Détachement",
+              "Sagesse"
+            ],
+            "dominantDynamic": "Synthèse et transmission"
+          }
+        ],
+        "notes": {
+          "symbolicNature": "Les cycles sont symboliques et non prédictifs.",
+          "flexibility": "Les âges sont indicatifs et peuvent varier selon les parcours individuels.",
+          "nonLinearity": "Un même arcane peut s'activer à plusieurs moments de la vie."
+        }
+      }
+]
