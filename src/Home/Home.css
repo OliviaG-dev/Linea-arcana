@@ -39,7 +39,6 @@
   color: var(--text-primary);
   box-sizing: border-box;
   position: relative;
-  padding: 2rem 0;
   overflow-x: hidden;
 }
 
@@ -266,6 +265,24 @@
   border-color: var(--border-hover);
 }
 
+.form-input-error {
+  border-color: rgba(220, 53, 69, 0.5) !important;
+  background: rgba(220, 53, 69, 0.05) !important;
+}
+
+.form-input-error:focus {
+  border-color: rgba(220, 53, 69, 0.8) !important;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1) !important;
+}
+
+.form-error {
+  font-size: 0.75rem;
+  color: rgba(220, 53, 69, 0.9);
+  margin-top: 0.25rem;
+  display: block;
+  font-weight: 400;
+}
+
 .form-submit {
   margin-top: 0.5rem;
   padding: 1.125rem 2rem;
@@ -307,7 +324,6 @@
 
   .home-sidebar {
     padding-right: 0;
-    padding-top: 2rem;
     padding-bottom: 2rem;
     border-right: none;
     border-bottom: 1px solid var(--border-color);

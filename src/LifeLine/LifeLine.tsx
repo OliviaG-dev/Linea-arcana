@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import type { LifeLineResult } from "../utils/tarotCalculations";
+import type {
+  ArcaneData,
+  TarologicalLifeCycle,
+  CycleDataItem,
+} from "../data/interface";
+import arcaneData from "../data/arcaneData.json";
+import cycleData from "../data/cycleData.json";
+import ArcaneModal from "../components/ArcaneModal/ArcaneModal";
 import "./LifeLine.css";
 
 interface LocationState {
@@ -12,6 +20,8 @@ interface LocationState {
 
 function LifeLine() {
   const [showName, setShowName] = useState(false);
+  const [selectedCard, setSelectedCard] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const state = location.state as LocationState | null;
@@ -81,6 +91,38 @@ function LifeLine() {
     return `/arcanes/${formattedNumber}.png`;
   };
 
+  const handleCardClick = (cardIndex: number) => {
+    setSelectedCard(cardIndex);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedCard(null);
+  };
+
+  const getSelectedArcane = (): ArcaneData | null => {
+    if (selectedCard === null) return null;
+    const arcaneNumbers = [
+      result.arcane1,
+      result.arcane2,
+      result.arcane3,
+      result.arcane4,
+      result.arcane5,
+    ];
+    const arcaneNumber = arcaneNumbers[selectedCard - 1];
+    return (
+      (arcaneData as ArcaneData[]).find((a) => a.number === arcaneNumber) ||
+      null
+    );
+  };
+
+  const getSelectedCycle = (): TarologicalLifeCycle | null => {
+    if (selectedCard === null) return null;
+    const cycleDataItem = (cycleData as CycleDataItem[])[0];
+    return cycleDataItem.tarologicalLifeCycles[selectedCard - 1] || null;
+  };
+
   return (
     <div className="life-line">
       <div className="life-line-container">
@@ -104,7 +146,11 @@ function LifeLine() {
         </div>
 
         <div className="life-line-arcanes">
-          <div className="arcane-card arcane-card-1">
+          <div
+            className="arcane-card arcane-card-1"
+            onClick={() => handleCardClick(1)}
+            style={{ cursor: "pointer" }}
+          >
             <div className="arcane-age-range">{arcaneAgeRanges[1]}</div>
             <p className="arcane-description">{arcaneDescriptions[1]}</p>
             <div className="arcane-image-wrapper">
@@ -127,9 +173,14 @@ function LifeLine() {
             <h3 className="arcane-name">
               {arcaneNames[result.arcane1 as keyof typeof arcaneNames]}
             </h3>
+            <p className="arcane-click-hint">(clic pour découvrir)</p>
           </div>
 
-          <div className="arcane-card arcane-card-2">
+          <div
+            className="arcane-card arcane-card-2"
+            onClick={() => handleCardClick(2)}
+            style={{ cursor: "pointer" }}
+          >
             <div className="arcane-age-range">{arcaneAgeRanges[2]}</div>
             <p className="arcane-description">{arcaneDescriptions[2]}</p>
             <div className="arcane-image-wrapper">
@@ -152,9 +203,14 @@ function LifeLine() {
             <h3 className="arcane-name">
               {arcaneNames[result.arcane2 as keyof typeof arcaneNames]}
             </h3>
+            <p className="arcane-click-hint">(clic pour découvrir)</p>
           </div>
 
-          <div className="arcane-card arcane-card-3">
+          <div
+            className="arcane-card arcane-card-3"
+            onClick={() => handleCardClick(3)}
+            style={{ cursor: "pointer" }}
+          >
             <div className="arcane-age-range">{arcaneAgeRanges[3]}</div>
             <p className="arcane-description">{arcaneDescriptions[3]}</p>
             <div className="arcane-image-wrapper">
@@ -177,9 +233,14 @@ function LifeLine() {
             <h3 className="arcane-name">
               {arcaneNames[result.arcane3 as keyof typeof arcaneNames]}
             </h3>
+            <p className="arcane-click-hint">(clic pour découvrir)</p>
           </div>
 
-          <div className="arcane-card arcane-card-4">
+          <div
+            className="arcane-card arcane-card-4"
+            onClick={() => handleCardClick(4)}
+            style={{ cursor: "pointer" }}
+          >
             <div className="arcane-age-range">{arcaneAgeRanges[4]}</div>
             <p className="arcane-description">{arcaneDescriptions[4]}</p>
             <div className="arcane-image-wrapper">
@@ -202,9 +263,14 @@ function LifeLine() {
             <h3 className="arcane-name">
               {arcaneNames[result.arcane4 as keyof typeof arcaneNames]}
             </h3>
+            <p className="arcane-click-hint">(clic pour découvrir)</p>
           </div>
 
-          <div className="arcane-card arcane-card-5 arcane-final">
+          <div
+            className="arcane-card arcane-card-5"
+            onClick={() => handleCardClick(5)}
+            style={{ cursor: "pointer" }}
+          >
             <div className="arcane-age-range">{arcaneAgeRanges[5]}</div>
             <p className="arcane-description">{arcaneDescriptions[5]}</p>
             <div className="arcane-image-wrapper">
@@ -227,6 +293,7 @@ function LifeLine() {
             <h3 className="arcane-name">
               {arcaneNames[result.arcane5 as keyof typeof arcaneNames]}
             </h3>
+            <p className="arcane-click-hint">(clic pour découvrir)</p>
           </div>
         </div>
 
@@ -234,6 +301,13 @@ function LifeLine() {
           Nouveau calcul
         </button>
       </div>
+
+      <ArcaneModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        cycle={getSelectedCycle()}
+        arcane={getSelectedArcane()}
+      />
     </div>
   );
 }

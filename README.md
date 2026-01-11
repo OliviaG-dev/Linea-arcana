@@ -13,11 +13,16 @@ Un outil de lecture symbolique pour mieux comprendre vos cycles, vos choix et vo
 
 ## ✨ Fonctionnalités
 
-- 🔮 Calcul de votre ligne de vie tarologique
-- 📊 Analyse basée sur la roue de Pythagore
-- 🎴 Interprétation des 22 arcanes du Tarot de Marseille
-- 🎨 Interface moderne et intuitive
-- 📱 Design responsive
+- 🔮 Calcul de votre ligne de vie tarologique à partir de votre prénom, nom et année de naissance
+- 📊 Analyse basée sur la roue de Pythagore (numérologie pythagoricienne)
+- 🎴 Interprétation des 22 arcanes majeurs du Tarot de Marseille
+- 🎯 Affichage de 5 arcanes correspondant aux 5 cycles de vie (personnalité, enfance, passage, réalisations, aboutissement)
+- 🖼️ Visualisation des cartes avec animations de retournement
+- 📖 Modal détaillée avec descriptions complètes des cycles et arcanes
+- ✅ Validation complète du formulaire avec messages d'erreur
+- 🎨 Interface moderne et intuitive avec design mystique
+- 📱 Design responsive (mobile, tablette, desktop)
+- 🎭 Animations élégantes et transitions fluides
 
 ## 🚀 Installation
 
@@ -103,6 +108,7 @@ yarn lint
 
 - **[React](https://react.dev/)** (v19.2.0) - Bibliothèque JavaScript pour construire des interfaces utilisateur
 - **[TypeScript](https://www.typescriptlang.org/)** (v5.9.3) - Superset typé de JavaScript
+- **[React Router DOM](https://reactrouter.com/)** (v7.12.0) - Routage côté client pour React
 - **[Vite](https://vitejs.dev/)** (v7.2.4) - Outil de build et serveur de développement ultra-rapide
 - **[ESLint](https://eslint.org/)** - Linter pour JavaScript et TypeScript
 
@@ -110,20 +116,34 @@ yarn lint
 
 ```
 linea-arcana/
-├── public/           # Assets statiques (images, etc.)
+├── public/
+│   └── arcanes/          # Images des 22 arcanes majeurs + dos de carte
 ├── src/
-│   ├── Home/        # Composant Home
-│   │   ├── Home.tsx # Composant React
-│   │   └── Home.css # Styles CSS
-│   ├── App.tsx      # Composant principal
-│   ├── App.css      # Styles globaux de l'App
-│   ├── index.css    # Styles de base
-│   └── main.tsx     # Point d'entrée de l'application
-├── index.html       # Template HTML
-├── package.json     # Dépendances et scripts
-├── tsconfig.json    # Configuration TypeScript
-├── vite.config.ts   # Configuration Vite
-└── eslint.config.js # Configuration ESLint
+│   ├── components/
+│   │   └── ArcaneModal/  # Modal pour afficher les détails des arcanes
+│   │       ├── ArcaneModal.tsx
+│   │       └── ArcaneModal.css
+│   ├── data/
+│   │   ├── arcaneData.json    # Données descriptives des 22 arcanes
+│   │   ├── cycleData.json     # Données des 5 cycles de vie
+│   │   └── interface.ts       # Interfaces TypeScript
+│   ├── Home/                  # Page d'accueil avec formulaire
+│   │   ├── Home.tsx
+│   │   └── Home.css
+│   ├── LifeLine/              # Page de résultats (ligne de vie)
+│   │   ├── LifeLine.tsx
+│   │   └── LifeLine.css
+│   ├── utils/
+│   │   └── tarotCalculations.ts  # Logique de calcul pythagoricien
+│   ├── App.tsx                # Composant principal avec routing
+│   ├── App.css
+│   ├── index.css              # Styles globaux et variables CSS
+│   └── main.tsx               # Point d'entrée de l'application
+├── index.html                 # Template HTML
+├── package.json               # Dépendances et scripts
+├── tsconfig.json              # Configuration TypeScript
+├── vite.config.ts             # Configuration Vite
+└── eslint.config.js           # Configuration ESLint
 ```
 
 ## 🎯 Méthode

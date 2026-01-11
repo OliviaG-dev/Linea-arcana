@@ -1,19 +1,61 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { calculateLifeLine } from "../utils/tarotCalculations";
 import "./Home.css";
 
+interface FormErrors {
+  prenom?: string;
+  nom?: string;
+  annee?: string;
+}
+
 function Home() {
   const navigate = useNavigate();
+  const [errors, setErrors] = useState<FormErrors>({});
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const prenom = formData.get("prenom") as string;
-    const nom = formData.get("nom") as string;
-    const annee = parseInt(formData.get("annee") as string, 10);
+    const prenom = (formData.get("prenom") as string)?.trim() || "";
+    const nom = (formData.get("nom") as string)?.trim() || "";
+    const anneeStr = (formData.get("annee") as string)?.trim() || "";
+    const annee = parseInt(anneeStr, 10);
 
-    if (!prenom || !nom || !annee) {
-      alert("Veuillez remplir tous les champs");
+    const newErrors: FormErrors = {};
+
+    // Validation prénom
+    if (!prenom) {
+      newErrors.prenom = "Le prénom est requis";
+    } else if (prenom.length < 2) {
+      newErrors.prenom = "Le prénom doit contenir au moins 2 caractères";
+    } else if (!/^[a-zA-ZÀ-ÿ\s-']+$/.test(prenom)) {
+      newErrors.prenom = "Le prénom ne doit contenir que des lettres";
+    }
+
+    // Validation nom
+    if (!nom) {
+      newErrors.nom = "Le nom est requis";
+    } else if (nom.length < 2) {
+      newErrors.nom = "Le nom doit contenir au moins 2 caractères";
+    } else if (!/^[a-zA-ZÀ-ÿ\s-']+$/.test(nom)) {
+      newErrors.nom = "Le nom ne doit contenir que des lettres";
+    }
+
+    // Validation année
+    if (!anneeStr) {
+      newErrors.annee = "L'année de naissance est requise";
+    } else if (isNaN(annee)) {
+      newErrors.annee = "L'année doit être un nombre valide";
+    } else if (annee < 1900 || annee > new Date().getFullYear()) {
+      newErrors.annee = `L'année doit être entre 1900 et ${new Date().getFullYear()}`;
+    } else if (annee > new Date().getFullYear() - 10) {
+      newErrors.annee = "L'année semble trop récente";
+    }
+
+    setErrors(newErrors);
+
+    // Si des erreurs existent, ne pas soumettre
+    if (Object.keys(newErrors).length > 0) {
       return;
     }
 
@@ -77,9 +119,19 @@ function Home() {
                   type="text"
                   id="prenom"
                   name="prenom"
-                  className="form-input"
+                  className={`form-input ${
+                    errors.prenom ? "form-input-error" : ""
+                  }`}
                   placeholder="Votre prénom"
+                  onFocus={() => {
+                    if (errors.prenom) {
+                      setErrors({ ...errors, prenom: undefined });
+                    }
+                  }}
                 />
+                {errors.prenom && (
+                  <span className="form-error">{errors.prenom}</span>
+                )}
               </div>
 
               <div className="form-group">
@@ -90,9 +142,17 @@ function Home() {
                   type="text"
                   id="nom"
                   name="nom"
-                  className="form-input"
+                  className={`form-input ${
+                    errors.nom ? "form-input-error" : ""
+                  }`}
                   placeholder="Votre nom"
+                  onFocus={() => {
+                    if (errors.nom) {
+                      setErrors({ ...errors, nom: undefined });
+                    }
+                  }}
                 />
+                {errors.nom && <span className="form-error">{errors.nom}</span>}
               </div>
 
               <div className="form-group">
@@ -103,11 +163,21 @@ function Home() {
                   type="number"
                   id="annee"
                   name="annee"
-                  className="form-input"
+                  className={`form-input ${
+                    errors.annee ? "form-input-error" : ""
+                  }`}
                   placeholder="Ex: 1990"
                   min="1900"
-                  max="2100"
+                  max={new Date().getFullYear()}
+                  onFocus={() => {
+                    if (errors.annee) {
+                      setErrors({ ...errors, annee: undefined });
+                    }
+                  }}
                 />
+                {errors.annee && (
+                  <span className="form-error">{errors.annee}</span>
+                )}
               </div>
 
               <button type="submit" className="form-submit">
