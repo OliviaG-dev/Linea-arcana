@@ -17,9 +17,10 @@ Un outil de lecture symbolique pour mieux comprendre vos cycles, vos choix et vo
 - 📊 Analyse basée sur la roue de Pythagore (numérologie pythagoricienne)
 - 🎴 Interprétation des 22 arcanes majeurs du Tarot de Marseille
 - 🎯 Affichage de 5 arcanes correspondant aux 5 cycles de vie (personnalité, enfance, passage, réalisations, aboutissement)
+- ✨ **Mise en évidence automatique du cycle actuel** - La carte correspondant à votre cycle de vie actuel est automatiquement mise en évidence avec une bordure dorée animée
 - 🖼️ Visualisation des cartes avec animations de retournement
 - 📖 Modal détaillée avec descriptions complètes des cycles et arcanes
-- ✅ Validation complète du formulaire avec messages d'erreur
+- ✅ Validation complète du formulaire avec messages d'erreur (années acceptées : 1800-2050)
 - 🎨 Interface moderne et intuitive avec design mystique
 - 📱 Design responsive (mobile, tablette, desktop)
 - 🎭 Animations élégantes et transitions fluides
@@ -143,6 +144,7 @@ linea-arcana/
 ├── package.json               # Dépendances et scripts
 ├── tsconfig.json              # Configuration TypeScript
 ├── vite.config.ts             # Configuration Vite
+├── vercel.json                # Configuration Vercel pour le routing SPA
 └── eslint.config.js           # Configuration ESLint
 ```
 
@@ -150,11 +152,13 @@ linea-arcana/
 
 Linea Arcana calcule à partir de quelques données essentielles :
 
-- Votre arcane de personnalité
-- Votre héritage familial et émotionnel
-- Votre passage vers l'âge adulte
-- Vos réalisations et défis majeurs
-- Votre arcane d'aboutissement
+- **Arcane 1** : Votre personnalité incarnée (prénom + nom)
+- **Arcane 2** : Votre héritage familial et émotionnel (année de naissance)
+- **Arcane 3** : Votre passage vers l'âge adulte (réduction de l'arcane 2)
+- **Arcane 4** : Vos réalisations et défis majeurs (arcane 1 + arcane 3)
+- **Arcane 5** : Votre arcane d'aboutissement (somme des 4 premiers arcanes)
+
+Chaque arcane correspond à un cycle de vie spécifique avec des plages d'âge définies. L'application calcule automatiquement votre cycle actuel en fonction de votre âge et met en évidence la carte correspondante avec une bordure dorée animée.
 
 Chaque arcane est interprété comme une énergie de vie, non comme une prédiction.
 
@@ -166,6 +170,21 @@ Chaque arcane est interprété comme une énergie de vie, non comme une prédict
 - `npm run build` - Compile l'application pour la production
 - `npm run preview` - Prévisualise la build de production
 - `npm run lint` - Exécute ESLint pour vérifier le code
+
+## 🚀 Déploiement
+
+### Vercel
+
+L'application est configurée pour être déployée sur [Vercel](https://vercel.com/). Le fichier `vercel.json` est inclus pour gérer correctement le routing des Single Page Applications (SPA).
+
+**Configuration automatique :**
+- Le fichier `vercel.json` redirige toutes les routes vers `index.html`, permettant à React Router de gérer le routage côté client
+- Cela évite les erreurs 404 lors du rafraîchissement des pages
+
+**Pour déployer :**
+1. Connectez votre repository Git à Vercel
+2. Vercel détectera automatiquement la configuration et déploiera l'application
+3. Les mises à jour seront automatiquement déployées à chaque push sur la branche principale
 
 ## 🤝 Contribution
 
