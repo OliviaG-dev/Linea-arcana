@@ -46,10 +46,8 @@ function Home() {
       newErrors.annee = "L'année de naissance est requise";
     } else if (isNaN(annee)) {
       newErrors.annee = "L'année doit être un nombre valide";
-    } else if (annee < 1900 || annee > new Date().getFullYear()) {
-      newErrors.annee = `L'année doit être entre 1900 et ${new Date().getFullYear()}`;
-    } else if (annee > new Date().getFullYear() - 10) {
-      newErrors.annee = "L'année semble trop récente";
+    } else if (annee < 1800 || annee > 2050) {
+      newErrors.annee = "L'année doit être entre 1800 et 2050";
     }
 
     setErrors(newErrors);
@@ -168,7 +166,7 @@ function Home() {
                   }`}
                   placeholder="Ex: 1990"
                   min="1900"
-                  max={new Date().getFullYear()}
+                  max="2050"
                   onFocus={() => {
                     if (errors.annee) {
                       setErrors({ ...errors, annee: undefined });

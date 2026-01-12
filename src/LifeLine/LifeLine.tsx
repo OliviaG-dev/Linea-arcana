@@ -123,6 +123,32 @@ function LifeLine() {
     return cycleDataItem.tarologicalLifeCycles[selectedCard - 1] || null;
   };
 
+  // Calculer l'âge actuel et déterminer le cycle actuel
+  const getCurrentAge = (): number => {
+    const currentYear = new Date().getFullYear();
+    return currentYear - annee;
+  };
+
+  const getCurrentCycle = (): number | null => {
+    const age = getCurrentAge();
+    const cycleDataItem = (cycleData as CycleDataItem[])[0];
+    
+    // Vérifier dans l'ordre inverse (du plus récent au plus ancien)
+    // pour gérer les chevauchements
+    for (let i = cycleDataItem.tarologicalLifeCycles.length - 1; i >= 0; i--) {
+      const cycle = cycleDataItem.tarologicalLifeCycles[i];
+      const { min, max } = cycle.ageRange;
+      
+      if (age >= min && (max === null || age <= max)) {
+        return cycle.cycle;
+      }
+    }
+    
+    return null;
+  };
+
+  const currentCycle = getCurrentCycle();
+
   return (
     <div className="life-line">
       <div className="life-line-container">
@@ -147,7 +173,9 @@ function LifeLine() {
 
         <div className="life-line-arcanes">
           <div
-            className="arcane-card arcane-card-1"
+            className={`arcane-card arcane-card-1 ${
+              currentCycle === 1 ? "arcane-card-current" : ""
+            }`}
             onClick={() => handleCardClick(1)}
             style={{ cursor: "pointer" }}
           >
@@ -177,7 +205,9 @@ function LifeLine() {
           </div>
 
           <div
-            className="arcane-card arcane-card-2"
+            className={`arcane-card arcane-card-2 ${
+              currentCycle === 2 ? "arcane-card-current" : ""
+            }`}
             onClick={() => handleCardClick(2)}
             style={{ cursor: "pointer" }}
           >
@@ -207,7 +237,9 @@ function LifeLine() {
           </div>
 
           <div
-            className="arcane-card arcane-card-3"
+            className={`arcane-card arcane-card-3 ${
+              currentCycle === 3 ? "arcane-card-current" : ""
+            }`}
             onClick={() => handleCardClick(3)}
             style={{ cursor: "pointer" }}
           >
@@ -237,7 +269,9 @@ function LifeLine() {
           </div>
 
           <div
-            className="arcane-card arcane-card-4"
+            className={`arcane-card arcane-card-4 ${
+              currentCycle === 4 ? "arcane-card-current" : ""
+            }`}
             onClick={() => handleCardClick(4)}
             style={{ cursor: "pointer" }}
           >
@@ -267,7 +301,9 @@ function LifeLine() {
           </div>
 
           <div
-            className="arcane-card arcane-card-5"
+            className={`arcane-card arcane-card-5 ${
+              currentCycle === 5 ? "arcane-card-current" : ""
+            }`}
             onClick={() => handleCardClick(5)}
             style={{ cursor: "pointer" }}
           >
